@@ -37,12 +37,13 @@ router.post('/', async (ctx) => {
 
 router.put('/:id', async (ctx) => {
     try {
-        if (!ctx.request.body.emails) ctx.throw(422)
+        const data = ctx.request.body
+        if (!data.emails) ctx.throw(422)
 
         const updated = await Website.query()
             .findById(ctx.params.id)
             .patch({
-                emails: ctx.request.body.emails
+                emails: data.emails.split(',')
             })
 
         ctx.body = updated
