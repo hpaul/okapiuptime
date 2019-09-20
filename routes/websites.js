@@ -42,7 +42,7 @@ router.put('/:id', async (ctx) => {
         const updated = await Website.query()
             .findById(ctx.params.id)
             .patch({
-                emails: ctx.request.body.email
+                emails: ctx.request.body.emails
             })
 
         ctx.body = updated
