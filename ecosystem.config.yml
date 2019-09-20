@@ -4,6 +4,8 @@ apps:
     watch  : true
     ignore_watch:
       - 'data/okapiuptime.db'
+      - 'data/okapiuptime.db-journal'
+      - 'data/okapiuptime.db-wal'
     watch_options:
       followSymlinks: false
     env    :
