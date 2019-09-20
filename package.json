@@ -1,0 +1,39 @@
+{
+  "name": "okapiuptime",
+  "version": "1.0.0",
+  "description": "Check uptime of current projects",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "knex migrate:latest",
+    "dev": "nodemon index",
+    "start": "cross-env NODE_ENVIRONMENT=production node index"
+  },
+  "authors": [
+    "Paul H.",
+    "David S."
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.1.0",
+    "knex": "^0.19.4",
+    "koa": "^2.6.2",
+    "koa-404-handler": "0.0.2",
+    "koa-better-error-handler": "^3.0.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-boom": "0.0.4",
+    "koa-helmet": "^4.0.0",
+    "koa-logger": "^3.2.0",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.3.0",
+    "objection": "^1.6.9",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
