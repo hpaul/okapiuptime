@@ -7,7 +7,7 @@ router.get('/', async (ctx) => {
     try {
         const websites = await Website.query()
             .eagerAlgorithm(Website.NaiveEagerAlgorithm)
-            .eager(`[pingChecks(latest) as lastCheck]`)
+            .eager(`[pingChecks(latestThree) as lastCheck]`)
 
         ctx.body = websites;
     } catch(error) {
