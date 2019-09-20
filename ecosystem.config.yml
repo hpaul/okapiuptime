@@ -1,0 +1,8 @@
+apps:
+  - script   : ./index.js
+    name     : 'okapiuptime'
+    watch  : true
+    env    :
+      NODE_ENV: production
+      CRON_EXP: 5 * * * * *
+      PORT: 80
