@@ -52,5 +52,20 @@ router.put('/:id', async (ctx) => {
     }
 })
 
+router.delete('/:id', async (ctx) => {
+    try {
+        const deleted = await Website.query()
+            .findById(ctx.params.id)
+            .delete()
+
+        ctx.body = {
+            status: 'ok'
+        }
+    } catch(error) {
+        console.error(error)
+        ctx.throw(error)
+    }
+})
+
 
 module.exports = router.routes()
