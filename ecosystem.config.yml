@@ -2,6 +2,10 @@ apps:
   - script   : ./index.js
     name     : 'okapiuptime'
     watch  : true
+    ignore_watch:
+      - 'data/okapiuptime.db'
+    watch_options:
+      followSymlinks: false
     env    :
       NODE_ENV: production
       CRON_EXP: 5 * * * * *
