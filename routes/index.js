@@ -1,4 +1,3 @@
 module.exports = (router) => {
-    router.prefix('api')
-    router.use('/websites', require('./websites'))
+    router.use('/api/websites', require('./websites'))
 }
