@@ -5,6 +5,7 @@ const Cors = require('@koa/cors')
 const BodyParser = require('koa-bodyparser')
 const Helmet = require('koa-helmet')
 const respond = require('koa-respond')
+const serve = require('koa-static')
 
 const errorHandler = require('koa-better-error-handler');
 const koa404Handler = require('koa-404-handler');
@@ -37,6 +38,7 @@ app.use(BodyParser({
 
 app.use(respond())
 
+app.use(serve('public', { gzip: true }))
 // API routes
 require('./routes')(router)
 app.use(router.routes())
